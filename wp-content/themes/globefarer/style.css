@@ -13,3 +13,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #qodef-page-content {
     margin-bottom: 80px ;
 }
+
+.elementor-widget-container p:first-child {
+    margin-top: 30px ;
+}
+
+.elementor-3071 .elementor-element.elementor-element-2979c31{
+    margin-top: 0px; 
+    margin-bottom: 0px;
+    padding: 160px 14px 0px 14px ;
+}
+
+.elementor:not(.elementor-bc-flex-widget) .elementor-widget-wrap{
+    margin: 0px 0px 0px 0px;
+    --e-column-margin-right: 0px;
+    --e-column-margin-left: 0px;
+    padding: 0px 0px 0px 67px;
+}
