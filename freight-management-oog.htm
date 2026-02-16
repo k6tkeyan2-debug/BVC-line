@@ -149,23 +149,7 @@
       .wp-block-image.is-style-circle-mask img {
          border-radius: 9999px;
       }
-
-      @supports ((-webkit-mask-image: none) or (mask-image: none)) or (-webkit-mask-image: none) {
-         .wp-block-image.is-style-circle-mask img {
-            border-radius: 0;
-            -webkit-mask-image: url('data:image/svg+xml;utf8,
- <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" > <circle cx="50" cy="50" r="50" /> </svg> ');
- mask-image: url('data:image/svg+xml;utf8,
- <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" > <circle cx="50" cy="50" r="50" /> </svg> ');
- mask-mode: alpha;
-                     -webkit-mask-position: center;
-                     mask-position: center;
-                     -webkit-mask-repeat: no-repeat;
-                     mask-repeat: no-repeat;
-                     -webkit-mask-size: contain;
-                     mask-size: contain;
-               }
-            }
+ 
 
             :root :where(.wp-block-image.is-style-rounded img,
                .wp-block-image .is-style-rounded img) {
@@ -944,118 +928,12 @@
    <link rel="stylesheet" id="globefarer-core-style-css"
       href="wp-content/plugins/globefarer-core/assets/css/globefarer-core.min.css?ver=6.9" type="text/css"
       media="all" />
-   <link rel="stylesheet" id="globefarer-google-fonts-css"
-      href="css?family=Sarabun%3A200%2C400%2C500%2C700&#038;subset=latin-ext&#038;display=swap&#038;ver=1.0.0"
-      type="text/css" media="all" />
+   <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
    <link rel="stylesheet" id="globefarer-grid-css" href="wp-content/themes/globefarer/assets/css/grid.min.css?ver=6.9"
       type="text/css" media="all" />
    <link rel="stylesheet" id="globefarer-style-css" href="wp-content/themes/globefarer/style.css?ver=6.9"
       type="text/css" media="all" />
-   <style id="globefarer-style-inline-css" type="text/css">
-      #qodef-page-outer {
-         margin-top: -80px;
-      }
-
-      @media only screen and (max-width: 1024px) {
-         #qodef-page-outer {
-            margin-top: -80px;
-         }
-      }
-
-      #qodef-page-footer-top-area-inner {
-         position: relative;
-      }
-
-      #qodef-page-footer-middle-area-inner {
-         position: relative;
-      }
-
-      #qodef-page-footer-bottom-area-inner:before {
-         background-color: #ffffff16;
-      }
-
-      #qodef-page-inner {
-         padding: 0px 0px 0px 0px;
-      }
-
-      @media only screen and (max-width: 1024px) {
-         #qodef-page-inner {
-            padding: 0px 0px 0px 0px;
-         }
-      }
-
-      .qodef-header-sticky .qodef-header-sticky-inner {
-         padding-left: 0px;
-         padding-right: 0px;
-      }
-
-      #qodef-page-header .qodef-header-logo-link {
-         padding: 0 0 0 40px;
-      }
-
-      #qodef-page-mobile-header .qodef-mobile-header-logo-link {
-         padding: 0 0 0 40px;
-      }
-
-      #qodef-side-area {
-         width: 500px;
-         right: -500px;
-      }
-
-      .qodef-page-title {
-         height: 92px;
-         background-color: transparent;
-      }
-
-      .qodef-page-title .qodef-m-content {
-         padding-top: 80px;
-      }
-
-      @media only screen and (max-width: 1024px) {
-         .qodef-page-title {
-            height: 125px;
-         }
-      }
-
-      @media only screen and (max-width: 1024px) {
-         .qodef-page-title .qodef-m-content {
-            padding-top: 80px;
-         }
-      }
-
-      .qodef-header--standard #qodef-page-header {
-         background-color: rgba(255, 255, 255, 0);
-      }
-
-      .qodef-header--standard #qodef-page-header-inner {
-         padding-left: 0px;
-         padding-right: 0px;
-         border-bottom-color: var(--qode-header-light-color);
-         border-bottom-width: 1px;
-         border-bottom-style: solid;
-      }
-
-      .qodef-header--standard #qodef-page-header .qodef-widget-holder .widget::before {
-         background-color: #ffffff80;
-      }
-
-      @media only screen and (max-width: 680px) {
-
-         h1,
-         .qodef-h1 {
-            font-size: 42px;
-            line-height: 50px;
-         }
-
-         h2,
-         .qodef-h2 {
-            font-size: 37px;
-            line-height: 45px;
-         }
-      }
-
-      /*# sourceURL=globefarer-style-inline-css */
-   </style>
+    
    <link rel="stylesheet" id="globefarer-core-elementor-css"
       href="wp-content/plugins/globefarer-core/inc/plugins/elementor/assets/css/elementor.min.css?ver=6.9"
       type="text/css" media="all" />
@@ -1074,6 +952,8 @@
       href="wp-content/uploads/elementor/css/post-7709.css?ver=1685456448" type="text/css" media="all" />
    <link rel="stylesheet" id="elementor-post-3071-css"
       href="wp-content/uploads/elementor/css/post-3071.css?ver=1685460703" type="text/css" media="all" />
+   <link rel="stylesheet" id="elementor-post-2184-css" href="wp-content/uploads/elementor/css/post-2814.css"
+      type="text/css" media="all" />
    <link rel="stylesheet" id="qode-zendesk-chat-css" href="wp-content/plugins/qode-zendesk-chat/assets/main.css?ver=6.9"
       type="text/css" media="all" />
    <link rel="stylesheet" id="google-fonts-1-css"
@@ -1389,10 +1269,10 @@
                         <span class="qodef-menu-item-text">About us</span>
                      </a>
                   </li>
-                  <!-- Solutions -->
+                  <!-- Solution -->
                   <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2">
                      <a href="solution.htm">
-                        <span class="qodef-menu-item-text">Solutions</span>
+                        <span class="qodef-menu-item-text">Solution</span>
                      </a>
                   </li>
                   <!-- Contact -->
@@ -1400,11 +1280,11 @@
                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-766  qodef-menu-item--narrow">
                      <a href="contact.htm">
                         <span class="qodef-menu-item-text">
-                           Contact 
+                           Contact
                         </span>
-                     </a> 
+                     </a>
                   </li>
-                  
+
                   <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2">
                      <button
                         class="wpcf7-form-control wpcf7-submit qodef-button qodef-size--normal qodef-layout--filled qodef-m"
@@ -1442,13 +1322,13 @@
                                  <path d="M0,0H10V2H0Z" transform="translate(7.071 8.485) rotate(-135)"></path>
                               </svg>
                            </span>
-                        </a> 
+                        </a>
                      </li>
                      <li
                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-761  qodef-menu-item--narrow">
                         <a href="about-us.htm">
                            <span class="qodef-menu-item-text">
-                              About Us 
+                              About Us
                            </span>
                         </a>
                      </li>
@@ -1456,15 +1336,15 @@
                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-764  qodef-menu-item--narrow">
                         <a href="solution.htm">
                            <span class="qodef-menu-item-text">
-                              Solutions 
+                              Solution
                            </span>
                         </a>
-                     </li> 
+                     </li>
                      <li
                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-766  qodef-menu-item--narrow">
                         <a href="contact.htm">
                            <span class="qodef-menu-item-text">
-                              Contact 
+                              Contact
                            </span>
                         </a>
                      </li>
@@ -1535,12 +1415,12 @@
                </li>
                <li
                   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-764  qodef-menu-item--narrow">
-                  <a href="solution.htm"><span class="qodef-menu-item-text">Solutions</span></a>
+                  <a href="solution.htm"><span class="qodef-menu-item-text">Solution</span></a>
                </li>
                <li
                   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-766  qodef-menu-item--narrow">
                   <a href="contact.htm"><span class="qodef-menu-item-text">Contact</span></a>
-                  
+
                </li>
             </ul>
          </nav>
@@ -1549,66 +1429,507 @@
          <div
             class="qodef-page-title qodef-m qodef-title--standard qodef-alignment--left qodef-vertical-alignment--header-bottom qodef-page-title-area-cursor--dark">
             <div class="qodef-m-inner">
-               <div class="qodef-m-content qodef-content-grid">
-                  <h1 class="qodef-m-title entry-title">Value-Added Service</h1>
+               <div class="qodef-m-content qodef-content-grid ">
+                  <h1 class="qodef-m-title entry-title">
+                     Project Cargo/ OOG</h1>
                </div>
             </div>
          </div>
          <div id="qodef-page-inner" class="qodef-content-grid">
-            <main id="qodef-page-content" class="qodef-grid qodef-layout--template" role="main">
+            <main id="qodef-page-content" class="qodef-grid qodef-layout--template qodef-gutter--huge" role="main">
                <div class="qodef-grid-inner clear">
-                  <div class="qodef-grid-item qodef-page-content-section qodef-col--12">
-                     <div class="qodef-career qodef-m qodef-career-single qodef-layout--default">
-                        <article
-                           class="qodef-career-single-item qodef-e post-3071 career-item type-career-item status-publish hentry career-category-warehouse">
-                           <div class="qodef-e-inner">
-                              <div class="qodef-e-content">
-                                 <div class="qodef-grid-inner">
-                                    <div class="qodef-grid-item qodef-career-info">
-                                       <div class="qodef-e qodef-career-content">
-                                          <div data-elementor-type="wp-post" data-elementor-id="3071"
-                                             class="elementor elementor-3071">
-                                             <!-- Road Freight Section -->
-                                             <section
-                                                class="elementor-section elementor-top-section elementor-element elementor-element-2979c31 elementor-section-full_width elementor-section-height-default elementor-section-height-default qodef-elementor-content-no">
-                                                <div class="elementor-container elementor-column-gap-no">
-                                                   <div
-                                                      class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-aa69866"
-                                                      data-id="aa69866" data-element_type="column">
-                                                      <div class="elementor-widget-wrap elementor-element-populated">
-                                                         <div
-                                                            class="elementor-element elementor-element-ed3550d elementor-widget elementor-widget-globefarer_core_section_title"
-                                                            data-id="ed3550d" data-element_type="widget"
-                                                            data-widget_type="globefarer_core_section_title.default">
-                                                            <div class="elementor-widget-container">
-                                                               <div
-                                                                  class="qodef-shortcode qodef-m qodef-section-title qodef-alignment--left qodef-appear-animation--no">
-                                                                  <h2 class="qodef-m-title">Customs Brokerage</h2>
-                                                                  <h3 class="qodef-m-subtitle">Customs Brokerage Solutions Simplified</h3>
-                                                                  <p class="qodef-m-text" style="margin-top: 20px">
-                                                                     Navigating international trade regulations can be a complex and time-consuming process, but with BVC's customs brokerage solutions, you can ensure that your cargo clears customs seamlessly. Our team of experienced professionals ensures compliance with all regulatory requirements, enabling faster clearance and avoiding costly delays.
-                                                                  </p>
-                                                               </div>
-                                                            </div>
+                  <div class="qodef-grid-item qodef-page-content-section qodef-col--9 qodef-col-push--3">
+                     <div data-elementor-type="wp-page" data-elementor-id="2814" class="elementor elementor-2814">
+                        
+                        <!-- img -->
+                         <section
+                           class="elementor-section elementor-top-section elementor-element elementor-element-137040d elementor-section-full_width elementor-section-height-default elementor-section-height-default qodef-elementor-content-no"
+                           data-id="137040d" data-element_type="section">
+                           <div class="elementor-container elementor-column-gap-no">
+                              <div
+                                 class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-54985ce"
+                                 data-id="54985ce" data-element_type="column">
+                                 <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div
+                                       class="elementor-element elementor-element-3c9ccaf elementor-widget elementor-widget-globefarer_core_section_title"
+                                       data-id="3c9ccaf" data-element_type="widget"
+                                       data-widget_type="globefarer_core_section_title.default">
+                                       <div class="elementor-widget-container">
+                                          <div
+                                             class="qodef-shortcode qodef-m  qodef-section-title qodef-alignment--left   qodef-appear-animation--no">
+                                             <h2 class="qodef-m-title">
+                                                
+                                             </h2>
+                                             
+                                             <div class="elementor-widget-wrap elementor-element-populated">
+                                                <div
+                                                   class="elementor-element elementor-element-22f377d elementor-widget elementor-widget-globefarer_core_single_image"
+                                                   data-id="22f377d" data-element_type="widget"
+                                                   data-widget_type="globefarer_core_single_image.default" style="margin-top: 30px">
+                                                   <div class="elementor-widget-container">
+                                                      <div
+                                                         class="qodef-shortcode qodef-m  qodef-single-image qodef-layout--default qodef-appear-animation--no  ">
+                                                         <div class="qodef-m-image">
+                                                            <img fetchpriority="high" decoding="async" width="1040" height="552"
+                                                               src="./wp-content/uploads/2021/08/services-img-1.jpg"
+                                                               class="attachment-full size-full" alt="s"
+                                                               srcset="./wp-content/uploads/2021/08/services-img-1.jpg 1040w, ./wp-content/uploads/2021/08/services-img-1-300x159.jpg 300w, ./wp-content/uploads/2021/08/services-img-1-1024x544.jpg 1024w, ./wp-content/uploads/2021/08/services-img-1-768x408.jpg 768w"
+                                                               sizes="(max-width: 1040px) 100vw, 1040px">
                                                          </div>
                                                       </div>
                                                    </div>
                                                 </div>
-                                             </section>
-                                             <!-- end  -->
+                                             </div>
                                           </div>
                                        </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
-                        </article>
+                        </section>
+                         <!-- end of image -->
+                        <section
+                           class="elementor-section elementor-top-section elementor-element elementor-element-3a6441b8 elementor-section-boxed elementor-section-height-default elementor-section-height-default qodef-elementor-content-no elementor-element-pb-50 elementor-element-pt-50"
+                           data-id="3a6441b8" data-element_type="section">
+                           <div class="elementor-container elementor-column-gap-default">
+                              <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-59603f21"
+                                 data-id="59603f21" data-element_type="column">
+                                 <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div class="elementor-element elementor-element-5935464e elementor-widget elementor-widget-text-editor"
+                                       data-id="5935464e" data-element_type="widget" data-widget_type="text-editor.default">
+                                       <div class="elementor-widget-container">
+                                          <blockquote>
+                                             <h3>Expertise in Oversized, Out-of-Gauge, and Special Cargo with Our Own Fleet of Flat Rack,
+                                                Flatbed, and Open Top Containers</h3>
+                                          </blockquote>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                        
+                        <section
+                           class="elementor-section elementor-top-section elementor-element elementor-element-eb4c986 elementor-section-full_width elementor-section-height-default elementor-section-height-default qodef-elementor-content-no"
+                           data-id="eb4c986" data-element_type="section">
+                           <div class="elementor-container elementor-column-gap-no">
+                              <div
+                                 class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8549e7b"
+                                 data-id="8549e7b" data-element_type="column">
+                                 <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div
+                                       class="elementor-element elementor-element-fbbd632 elementor-widget elementor-widget-text-editor"
+                                       data-id="fbbd632" data-element_type="widget"
+                                       data-widget_type="text-editor.default">
+                                       <div class="elementor-widget-container">
+                                          <style>
+                                             /*! elementor - v3.13.3 - 28-05-2023 */
+                                             .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
+                                                background-color: #69727d;
+                                                color: #fff
+                                             }
+
+                                             .elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
+                                                color: #69727d;
+                                                border: 3px solid;
+                                                background-color: transparent
+                                             }
+
+                                             .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap {
+                                                margin-top: 8px
+                                             }
+
+                                             .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter {
+                                                width: 1em;
+                                                height: 1em
+                                             }
+
+                                             .elementor-widget-text-editor .elementor-drop-cap {
+                                                float: left;
+                                                text-align: center;
+                                                line-height: 1;
+                                                font-size: 50px
+                                             }
+
+                                             .elementor-widget-text-editor .elementor-drop-cap-letter {
+                                                display: inline-block
+                                             }
+                                          </style>
+                                          <h3 style="margin-bottom: 15px;">Out-of-Gauge Containers</h3>
+                                          <p>Out-of-gauge containers are those whose dimensions exceed the standard length, width, or height of a regular shipping container. BVC handles a wide range of out-of-gauge cargo, including large tires packed in open-top containers, forming machines, firefighting vehicles, and other oversized items.</p>
+                                          
+                                          <h3 style="margin-top: 20px; margin-bottom: 15px;">Flat Rack Container</h3>
+                                          <p>Flat rack containers have collapsible sides, allowing them to function like standard shipping containers that can be folded down to create a flat platform. They are designed for transporting heavy, bulky, over-height, and/or over-width cargo.</p>
+                                          
+                                          <h3 style="margin-top: 20px; margin-bottom: 15px;">Open Top Container</h3>
+                                          <p>Open top containers feature a removable top, enabling cargo of any height to be easily loaded and shipped. They are ideal for materials that cannot fit into standard containers due to their height or shape.</p>
+                                          
+                                          <h3 style="margin-top: 20px; margin-bottom: 15px;">Reefer Containers</h3>
+                                          <p>BVC's dedicated reefer specialists, along with our extensive and modern fleet of technologically advanced reefer containers, ensure that your cargo is shipped under the most precise temperature control from origin to destination. Our cutting-edge technologies, such as Controlled Atmosphere (CA) and ultra-cool Magnum reefer containers, preserve even the most delicate cargo in perfect condition. We also offer the most competitive transit times, no matter where your cargo is headed.</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                        
+                        <!-- <section
+                           class="elementor-section elementor-top-section elementor-element elementor-element-d9daed0 elementor-section-full_width elementor-section-height-default elementor-section-height-default qodef-elementor-content-no"
+                           data-id="d9daed0" data-element_type="section">
+                           <div class="elementor-container elementor-column-gap-no">
+                              <div
+                                 class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b2e009c"
+                                 data-id="b2e009c" data-element_type="column">
+                                 <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div
+                                       class="elementor-element elementor-element-79eb6e2 elementor-widget elementor-widget-globefarer_core_section_title"
+                                       data-id="79eb6e2" data-element_type="widget"
+                                       data-widget_type="globefarer_core_section_title.default">
+                                       <div class="elementor-widget-container">
+                                          <div
+                                             class="qodef-shortcode qodef-m  qodef-section-title qodef-alignment--left   qodef-appear-animation--no">
+                                             <h2 class="qodef-m-title">
+                                                Our Solution </h2>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                        <section
+                           class="elementor-section elementor-top-section elementor-element elementor-element-db65588 elementor-section-full_width elementor-section-height-default elementor-section-height-default qodef-elementor-content-no"
+                           data-id="db65588" data-element_type="section">
+                           <div class="elementor-container elementor-column-gap-no">
+                              <div
+                                 class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-0f906c7"
+                                 data-id="0f906c7" data-element_type="column">
+                                 <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div
+                                       class="elementor-element elementor-element-3c6afe6 elementor-widget elementor-widget-globefarer_core_icon_with_text"
+                                       data-id="3c6afe6" data-element_type="widget"
+                                       data-widget_type="globefarer_core_icon_with_text.default">
+                                       <div class="elementor-widget-container">
+                                          <div
+                                             class="qodef-shortcode qodef-m  qodef-icon-with-text qodef-layout--top qodef--custom-icon  qodef-alignment--left">
+                                             <div class="qodef-m-icon-wrapper">
+                                                <img decoding="async" width="45" height="34"
+                                                   src="./wp-content/uploads/2021/08/landing-icon-4.png"
+                                                   class="attachment-full size-full" alt="d">
+                                             </div>
+                                             <div class="qodef-m-content">
+                                                <h4 class="qodef-m-title">
+                                                   <span class="qodef-m-title-text">Warehousing</span>
+                                                </h4>
+                                                <p class="qodef-m-text" style="margin-top: 18px">Vix
+                                                   ut ignota deserunt partien
+                                                   ad, pros tale falli
+                                                   periculis ad, idque
+                                                   deseruisse constituam.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div
+                                 class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-dec97c1"
+                                 data-id="dec97c1" data-element_type="column">
+                                 <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div
+                                       class="elementor-element elementor-element-18d079f elementor-widget elementor-widget-globefarer_core_icon_with_text"
+                                       data-id="18d079f" data-element_type="widget"
+                                       data-widget_type="globefarer_core_icon_with_text.default">
+                                       <div class="elementor-widget-container">
+                                          <div
+                                             class="qodef-shortcode qodef-m  qodef-icon-with-text qodef-layout--top qodef--custom-icon  qodef-alignment--left">
+                                             <div class="qodef-m-icon-wrapper">
+                                                <img decoding="async" width="45" height="34"
+                                                   src="./wp-content/uploads/2021/08/landing-icon-1.png"
+                                                   class="attachment-full size-full" alt="d">
+                                             </div>
+                                             <div class="qodef-m-content">
+                                                <h4 class="qodef-m-title">
+                                                   <span class="qodef-m-title-text">Land
+                                                      Freight</span>
+                                                </h4>
+                                                <p class="qodef-m-text" style="margin-top: 18px">Vix
+                                                   ut ignota deserunt partien
+                                                   ad, pros tale falli
+                                                   periculis ad, idque
+                                                   deseruisse constituam.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div
+                                 class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6350436"
+                                 data-id="6350436" data-element_type="column">
+                                 <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div
+                                       class="elementor-element elementor-element-fbe8d66 elementor-widget elementor-widget-globefarer_core_icon_with_text"
+                                       data-id="fbe8d66" data-element_type="widget"
+                                       data-widget_type="globefarer_core_icon_with_text.default">
+                                       <div class="elementor-widget-container">
+                                          <div
+                                             class="qodef-shortcode qodef-m  qodef-icon-with-text qodef-layout--top qodef--custom-icon  qodef-alignment--left">
+                                             <div class="qodef-m-icon-wrapper">
+                                                <img decoding="async" width="45" height="34"
+                                                   src="./wp-content/uploads/2021/08/landing-icon-2.png"
+                                                   class="attachment-full size-full" alt="d">
+                                             </div>
+                                             <div class="qodef-m-content">
+                                                <h4 class="qodef-m-title">
+                                                   <span class="qodef-m-title-text">Air
+                                                      Freight</span>
+                                                </h4>
+                                                <p class="qodef-m-text" style="margin-top: 18px">Vix
+                                                   ut ignota deserunt partien
+                                                   ad, pros tale falli
+                                                   periculis ad, idque
+                                                   deseruisse constituam.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                        <section
+                           class="elementor-section elementor-top-section elementor-element elementor-element-d15d6d7 elementor-section-full_width elementor-section-height-default elementor-section-height-default qodef-elementor-content-no"
+                           data-id="d15d6d7" data-element_type="section">
+                           <div class="elementor-container elementor-column-gap-no">
+                              <div
+                                 class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-76433f7"
+                                 data-id="76433f7" data-element_type="column">
+                                 <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div
+                                       class="elementor-element elementor-element-ae230ce elementor-widget elementor-widget-globefarer_core_icon_with_text"
+                                       data-id="ae230ce" data-element_type="widget"
+                                       data-widget_type="globefarer_core_icon_with_text.default">
+                                       <div class="elementor-widget-container">
+                                          <div
+                                             class="qodef-shortcode qodef-m  qodef-icon-with-text qodef-layout--top qodef--custom-icon  qodef-alignment--left">
+                                             <div class="qodef-m-icon-wrapper">
+                                                <img decoding="async" width="45" height="34"
+                                                   src="./wp-content/uploads/2021/08/landing-icon-3.png"
+                                                   class="attachment-full size-full" alt="d">
+                                             </div>
+                                             <div class="qodef-m-content">
+                                                <h4 class="qodef-m-title">
+                                                   <span class="qodef-m-title-text">Ocean
+                                                      Freight</span>
+                                                </h4>
+                                                <p class="qodef-m-text" style="margin-top: 18px">Vix
+                                                   ut ignota deserunt partien
+                                                   ad, pros tale falli
+                                                   periculis ad, idque
+                                                   deseruisse constituam.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div
+                                 class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-3fcad93"
+                                 data-id="3fcad93" data-element_type="column">
+                                 <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div
+                                       class="elementor-element elementor-element-47c9a08 elementor-widget elementor-widget-globefarer_core_icon_with_text"
+                                       data-id="47c9a08" data-element_type="widget"
+                                       data-widget_type="globefarer_core_icon_with_text.default">
+                                       <div class="elementor-widget-container">
+                                          <div
+                                             class="qodef-shortcode qodef-m  qodef-icon-with-text qodef-layout--top qodef--custom-icon  qodef-alignment--left">
+                                             <div class="qodef-m-icon-wrapper">
+                                                <img decoding="async" width="45" height="34"
+                                                   src="./wp-content/uploads/2021/09/landing-icon-6.png"
+                                                   class="attachment-full size-full" alt>
+                                             </div>
+                                             <div class="qodef-m-content">
+                                                <h4 class="qodef-m-title">
+                                                   <span class="qodef-m-title-text">Rail
+                                                      Freight </span>
+                                                </h4>
+                                                <p class="qodef-m-text" style="margin-top: 18px">Vix
+                                                   ut ignota deserunt partien
+                                                   ad, pros tale falli
+                                                   periculis ad, idque
+                                                   deseruisse constituam.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div
+                                 class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-0f906c7"
+                                 data-id="0f906c7" data-element_type="column">
+                                 <div class="elementor-widget-wrap elementor-element-populated">
+                                    <div
+                                       class="elementor-element elementor-element-3c6afe6 elementor-widget elementor-widget-globefarer_core_icon_with_text"
+                                       data-id="3c6afe6" data-element_type="widget"
+                                       data-widget_type="globefarer_core_icon_with_text.default">
+                                       <div class="elementor-widget-container">
+                                          <div
+                                             class="qodef-shortcode qodef-m  qodef-icon-with-text qodef-layout--top qodef--custom-icon  qodef-alignment--left">
+                                             <div class="qodef-m-icon-wrapper">
+                                                <img decoding="async" width="45" height="34"
+                                                   src="./wp-content/uploads/2021/08/landing-icon-4.png"
+                                                   class="attachment-full size-full" alt="d">
+                                             </div>
+                                             <div class="qodef-m-content">
+                                                <h4 class="qodef-m-title">
+                                                   <span class="qodef-m-title-text">Projet Cargo / OOG</span>
+                                                </h4>
+                                                <p class="qodef-m-text" style="margin-top: 18px">Vix
+                                                   ut ignota deserunt partien
+                                                   ad, pros tale falli
+                                                   periculis ad, idque
+                                                   deseruisse constituam.</p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </section> -->
                      </div>
+                  </div>
+                  <div class="qodef-grid-item qodef-page-sidebar-section qodef-col--3 qodef-col-pull--9">
+                     <aside id="qodef-page-sidebar" role="complementary">
+                        <div class="widget widget_nav_menu" data-area="services-sidebar">
+                           <h4 class=" ">Freight Management and Distribution</h4>
+                           <div class="menu-services-sidebar-menu-container">
+                              <ul id="menu-services-sidebar-menu" class="menu">
+                                 <li id="menu-item-2822"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2822">
+                                    <ul id="menu-services-sidebar-menu" class="menu">
+                                       <li id="menu-item-2825"
+                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2825"><a
+                                             href="./freight-management-truck.htm">Road Freight/Truck</a>
+                                       </li>
+                                       <li id="menu-item-2822"
+                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2822"><a
+                                             href="./freight-management-air.htm">Air Freight</a>
+                                       </li>
+                                       <li id="menu-item-2823"
+                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2823"><a
+                                             href="./freight-management-ocean.htm">Ocean Freight</a>
+                                       </li>
+                                       <li id="menu-item-2824"
+                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2824 menu-item-active"><a
+                                             href="./freight-management-oog.htm">Project Cargo / OOG</a>
+                                       </li>
+                                       
+                                    </ul>
+                                 </li>
+                                 
+                              </ul>
+                           </div>
+                           <h4>Warehouse</h4>
+                           <div class="menu-services-sidebar-menu-container">
+                              <ul id="menu-services-sidebar-menu" class="menu">
+                                 <li id="menu-item-2822"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2822">
+                                    <ul id="menu-services-sidebar-menu" class="menu">
+                                       <li id="menu-item-2823"
+                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2823"><a
+                                             href="./warehouse.htm">Warehouse And Distribution</a>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+
+                           <h4>Value-Added Service</h4>
+                           <div class="menu-services-sidebar-menu-container">
+                              <ul id="menu-services-sidebar-menu" class="menu">
+                                 <li id="menu-item-2822"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2822">
+                                    <ul id="menu-services-sidebar-menu" class="menu">
+                                       <li id="menu-item-2823"
+                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2823"><a
+                                             href="./customs-brokerage.htm">Customs Brokerage</a>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+                           <h4>Liner Agency</h4>
+                           <div class="menu-services-sidebar-menu-container">
+                              <ul id="menu-services-sidebar-menu" class="menu">
+                                 <li id="menu-item-2822"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2822">
+                                    <ul id="menu-services-sidebar-menu" class="menu">
+                                       <li id="menu-item-2823"
+                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2823"><a
+                                             href="./NVOCC.htm">NVOCC</a>
+                                       </li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </div>
+
+                        </div>
+                        <!-- <div class="widget widget_globefarer_core_call_to_action" data-area="services-sidebar">
+                           <div class="qodef-shortcode qodef-m  qodef-call-to-action qodef-layout--standard qodef-appear-animation--no">
+                              <div class="qodef-m-content">
+                                 <div class="qodef-m-content-mask">
+                                    <h6 class="qodef-m-tagline"> Download
+                                       Brochure </h6>
+                                    <h3 class="qodef-m-title"> Our Services
+                                       Brochure </h3>
+                                 </div>
+                              </div>
+                              <div class="qodef-m-button-mask"> <a
+                                    class="qodef-shortcode qodef-m qodef-m-button qodef-button qodef-layout--filled  qodef-html--link" href="#"
+                                    target="_self"> <span class="qodef-m-button-icon"><svg class="qodef-svg--plus"
+                                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"
+                                          viewbox="0 0 14 14">
+                                          <path class="qodef-m-horizontal" d="M0,0H14V2H0Z" transform="translate(0 6)">
+                                          </path>
+                                          <path class="qodef-m-vertical" d="M0,0H2V14H0Z" transform="translate(6)">
+                                          </path>
+                                       </svg></span>
+                                    <span class="qodef-m-button-text">Download
+                                       PDF</span> </a></div>
+                           </div>
+                        </div> -->
+                        <div class="widget widget_globefarer_core_contact_info" data-area="services-sidebar">
+                           <div
+                              class="qodef-shortcode qodef-m  qodef-contact-info qodef-layout--type-1 qodef-boxed-content--on">
+                              <h4 class="qodef-m-title"> For additional
+                                 questions. </h4>
+                              <div class="qodef-m-phone">
+                                 <h6 class="qodef-m-phone-tagline"> Support
+                                    center 24/7 </h6>
+                                 <h4 class="qodef-m-phone-item"> <a itemprop="telephone" href="tel:+6569808995"> +65 6980
+                                       8995 </a> </h4>
+                              </div>
+                              <div class="qodef-m-email">
+                                 <h6 class="qodef-m-email-tagline"> Get in
+                                    touch with us </h6>
+                                 <h4 class="qodef-m-email-item"> <a itemprop="email"
+                                       href="mailto:sales-sg@bvcline.com.sg">
+                                       sales-sg@bvcline.com.sg
+                                    </a> </h4>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="widget widget_block widget_text" data-area="services-sidebar">
+                           <p></p>
+                        </div>
+                     </aside>
                   </div>
                </div>
             </main>
-         </div>
-         <!-- close #qodef-page-inner div from header.php -->
+         </div><!-- close #qodef-page-inner div from header.php -->
       </div>
       <!-- close #qodef-page-outer div from header.php -->
       <footer id="qodef-page-footer" role="contentinfo">
@@ -1628,29 +1949,20 @@
                      <div class="qodef-grid-item">
                         <div id="nav_menu-2" class="widget widget_nav_menu"
                            data-area="qodef-footer-middle-area-column-2">
-                           <h5 class="qodef-widget-title">Our
-                              Divisions</h5>
+                           <h5 class="qodef-widget-title">Main Links</h5>
                            <div class="menu-footer-column-2-container">
                               <ul id="menu-footer-column-2" class="menu">
                                  <li id="menu-item-937"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-937">
-                                    <a href="javascript:void(0)">About
-                                       Us</a>
+                                    <a href="index.htm">Home</a>
                                  </li>
                                  <li id="menu-item-938"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-938">
-                                    <a href="javascript:void(0)">Our
-                                       Team</a>
+                                    <a href="about-us.htm">About us</a>
                                  </li>
                                  <li id="menu-item-939"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-939">
-                                    <a href="javascript:void(0)">Our
-                                       Clients</a>
-                                 </li>
-                                 <li id="menu-item-940"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-940">
-                                    <a href="javascript:void(0)">Meet
-                                       The Crew</a>
+                                    <a href="solution.htm">Solution</a>
                                  </li>
                                  <!-- <li
                                        id="menu-item-941"
@@ -1686,8 +1998,7 @@
                                  </li>
                                  <li id="menu-item-944"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-944">
-                                    <a href="javascript:void(0)">What
-                                       We Do</a>
+                                    <a href="javascript:void(0)">Project and Special Cargo / Reefer Cargo</a>
                                  </li>
                                  <li id="menu-item-945"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-945">
@@ -1718,86 +2029,21 @@
                      <div class="qodef-grid-item">
                         <div id="nav_menu-4" class="widget widget_nav_menu"
                            data-area="qodef-footer-middle-area-column-4">
-                           <h5 class="qodef-widget-title">Contact
-                              Us</h5>
+                           <h5 class="qodef-widget-title">Contact Us</h5>
                            <div class="menu-footer-column-4-container">
                               <ul id="menu-footer-column-4" class="menu">
                                  <li id="menu-item-950"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-950">
-                                    <a href="javascript:void(0)">Find
-                                       Us Here</a>
+                                    <a href="contact.htm">Contact Us</a>
                                  </li>
                                  <li id="menu-item-951"
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-951">
-                                    <a href="javascript:void(0)">Get
-                                       In Touch</a>
-                                 </li>
-                                 <li id="menu-item-952"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-952">
-                                    <a href="javascript:void(0)">FAQ
-                                       Page</a>
-                                 </li>
-                                 <li id="menu-item-953"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-953">
-                                    <a href="javascript:void(0)">Global
-                                       Network</a>
-                                 </li>
-                                 <li id="menu-item-954"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-954">
-                                    <a href="javascript:void(0)">Support
-                                       24/7</a>
+                                    <a href="get-a-quote.htm">Get a Quote</a>
                                  </li>
                               </ul>
                            </div>
                         </div>
                      </div>
-                     <!-- <div class="qodef-grid-item">
-                           <div
-                             id="nav_menu-5"
-                             class="widget widget_nav_menu"
-                             data-area="qodef-footer-middle-area-column-5"
-                           >
-                             <h5 class="qodef-widget-title">Latest News</h5>
-                             <div class="menu-footer-column-5-container">
-                               <ul id="menu-footer-column-5" class="menu">
-                                 <li
-                                   id="menu-item-955"
-                                   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-955"
-                                 >
-                                   <a href="expert-tips/index.htm">Expert Tips</a>
-                                 </li>
-                                 <li
-                                   id="menu-item-956"
-                                   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-956"
-                                 >
-                                   <a href="a-sustainable-future/index.htm"
-                                     >A Sustainable Future</a
-                                   >
-                                 </li>
-                                 <li
-                                   id="menu-item-957"
-                                   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-957"
-                                 >
-                                   <a href="fresh-start/index.htm">Fresh Start</a>
-                                 </li>
-                                 <li
-                                   id="menu-item-958"
-                                   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-958"
-                                 >
-                                   <a href="clean-spaces/index.htm">Clean Spaces</a>
-                                 </li>
-                                 <li
-                                   id="menu-item-959"
-                                   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-959"
-                                 >
-                                   <a href="tips-and-strategies/index.htm"
-                                     >Tips &#038; Strategies</a
-                                   >
-                                 </li>
-                               </ul>
-                             </div>
-                           </div>
-                           </div> -->
                   </div>
                </div>
             </div>
@@ -2062,20 +2308,7 @@
              }
            ]
          }
-      </script>
-   <!-- <div
-         class="rbt-toolbar"
-         data-theme="Company Title"
-         data-featured=""
-         data-button-position="72%"
-         data-button-horizontal="right"
-         data-button-alt="no"
-         ></div> -->
-   <!-- GTM Container placement set to footer -->
-   <!-- Google Tag Manager (noscript) -->
-   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTQ2BTD" height="0" width="0"
-         style="display: none; visibility: hidden" aria-hidden="true"></iframe></noscript>
-   <!-- End Google Tag Manager (noscript) -->
+      </script> 
    <link href="css-2?family=Sarabun:700%2C400%7CRoboto:400&display=swap" rel="stylesheet" property="stylesheet"
       media="all" type="text/css" />
    <script>
@@ -2745,239 +2978,7 @@
          window.RS_MODULES.checkMinimal();
       }
    </script>
-   <!-- my custom style -->
-
-   <style id="globefarer-style-inline-css" type="text/css">
-      #qodef-page-footer-top-area-inner {
-         position: relative;
-      }
-
-      #qodef-page-footer-middle-area-inner {
-         position: relative;
-      }
-
-      #qodef-page-footer-bottom-area-inner:before {
-         background-color: #ffffff16;
-      }
-
-      #qodef-page-inner {
-         padding: 0 19% 0 0;
-      }
-
-      @media only screen and (max-width: 1024px) {
-         #qodef-page-inner {
-            padding: 120px 0px 140px 0px;
-         }
-      }
-
-      .qodef-header-sticky .qodef-header-sticky-inner {
-         padding-left: 0px;
-         padding-right: 0px;
-      }
-
-      #qodef-page-header .qodef-header-logo-link {
-         padding: 0 0 0 40px;
-      }
-
-      #qodef-page-mobile-header .qodef-mobile-header-logo-link {
-         padding: 0 0 0 40px;
-      }
-
-      #qodef-side-area {
-         width: 500px;
-         right: -500px;
-      }
-
-      .qodef-page-title {
-         height: 353px;
-         background-color: var(--qode-main-color);
-      }
-
-      @media only screen and (max-width: 1024px) {
-         .qodef-page-title {
-            height: 353px;
-         }
-      }
-
-      .qodef-header--standard #qodef-page-header {
-         background-color: #FFF
-      }
-
-      .qodef-header--standard #qodef-page-header-inner {
-         padding-left: 0px;
-         padding-right: 0px;
-         border-bottom-color: #000000;
-         border-bottom-width: 1px;
-         border-bottom-style: solid;
-      }
-
-      .qodef-header--standard #qodef-page-header .qodef-widget-holder .widget::before {
-         background-color: #000000;
-      }
-
-      @media only screen and (max-width: 680px) {
-
-         h1,
-         .qodef-h1 {
-            font-size: 42px;
-            line-height: 50px;
-         }
-
-         h2,
-         .qodef-h2 {
-            font-size: 37px;
-            line-height: 45px;
-         }
-      }
-
-      /*# sourceURL=globefarer-style-inline-css */
-   </style>
-   <!-- end custom style -->
-   <style>
-      .solutions-section {
-         padding: 80px 0;
-         background-color: #f8f9fa;
-         text-align: center;
-      }
-
-      .solutions-title {
-         font-size: 32px;
-         font-weight: 800;
-         color: #0b2239;
-         text-transform: uppercase;
-         margin-bottom: 10px;
-         letter-spacing: 2px;
-      }
-
-
-      .solutions-grid {
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: center;
-         gap: 20px;
-         max-width: 1400px;
-         margin: 0 auto;
-         padding: 0 15px;
-      }
-
-      .solution-card {
-         background: #fff;
-         border: 1px solid #e1e1e1;
-         flex: 1;
-         min-width: 280px;
-         max-width: 320px;
-         min-height: 550px;
-         padding: 40px 20px;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         transition: transform 0.3s ease;
-         margin: 10px;
-      }
-
-      .solution-card:hover {
-         transform: translateY(-5px);
-         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-      }
-
-      /* .icon-circle {
-         width: 100px;
-         height: 100px;
-         background-color: #1a4a7c;
-         border-radius: 50%;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         margin-bottom: 25px;
-         color: #fff;
-         font-size: 40px;
-      } */
-      /* Icon Area */
-      .icon-circle {
-         width: 110px;
-         height: 110px;
-         border: 2px solid var(--qode-main-color);
-         border-radius: 50%;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         margin-bottom: 20px;
-         color: var(--qode-main-color);
-         font-size: 45px;
-      }
-
-      .solution-card h3 {
-         font-size: 20px;
-         font-weight: 700;
-         color: #0b2239;
-         margin-bottom: 20px;
-         min-height: 50px;
-         line-height: 1.3;
-      }
-
-      .solution-card ul {
-         list-style: none;
-         padding: 0;
-         margin: 0 0 30px 0;
-         text-align: left;
-         width: 100%;
-      }
-
-      .solution-card ul li {
-         font-size: 15px;
-         color: #555;
-         margin-bottom: 8px;
-         position: relative;
-         padding-left: 20px;
-      }
-
-      .solution-card ul li::before {
-         content: "•";
-         color: #1a4a7c;
-         position: absolute;
-         left: 0;
-         font-weight: bold;
-      }
-
-      .solution-card button {
-         margin-top: auto;
-         align-self: center;
-      }
-
-      .btn-read-more {
-         background-color: #0b2239;
-         color: #fff;
-         padding: 12px 25px;
-         text-decoration: none;
-         font-size: 13px;
-         font-weight: 600;
-         text-transform: uppercase;
-         margin-top: auto;
-         transition: background 0.3s;
-      }
-
-      .btn-read-more:hover {
-         background-color: #1a4a7c;
-         color: #fff;
-      }
-
-      @media (max-width: 768px) {
-         .solution-card {
-            min-width: 100%;
-         }
-      }
-      /* Fix button alignment for solution cards */
-
-
-.solution-card > *:not(button) {
-    flex-shrink: 0;
-}
-
-.solution-card ul {
-    flex-grow: 1;
-}
-
-   </style>
+    
 
 </body>
 
