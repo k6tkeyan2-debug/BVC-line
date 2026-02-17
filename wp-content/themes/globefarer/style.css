@@ -308,6 +308,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
       /* End of custom inline style */
 
-      .tp-tab-title, #qodef-page-header-inner span.qodef-menu-item-text {
+      .home .tp-tab-title,.home  #qodef-page-header-inner span.qodef-menu-item-text {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
