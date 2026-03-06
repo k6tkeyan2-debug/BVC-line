@@ -42,25 +42,398 @@
    <link rel="stylesheet" id="simple-line-icons-css"
       href="wp-content/plugins/globefarer-core/inc/icons/simple-line-icons/assets/css/simple-line-icons.min.css?ver=6.9"
       type="text/css" media="all" />
-   <style id="wp-emoji-styles-inline-css" type="text/css">
-      img.wp-smiley,
-      img.emoji {
-         display: inline !important;
-         border: none !important;
-         box-shadow: none !important;
-         height: 1em !important;
-         width: 1em !important;
-         margin: 0 0.07em !important;
-         vertical-align: -0.1em !important;
-         background: none !important;
-         padding: 0 !important;
-      }
-
-      /*# sourceURL=wp-emoji-styles-inline-css */
-   </style>
+    
    <link rel="stylesheet" id="wp-block-library-css" href="wp-includes/css/dist/block-library/style.min.css?ver=6.9"
       type="text/css" media="all" />
-    
+   <style id="wp-block-image-inline-css" type="text/css">
+      .wp-block-image>a,
+      .wp-block-image>figure>a {
+         display: inline-block;
+      }
+
+      .wp-block-image img {
+         box-sizing: border-box;
+         height: auto;
+         max-width: 100%;
+         vertical-align: bottom;
+      }
+
+      @media not (prefers-reduced-motion) {
+         .wp-block-image img.hide {
+            visibility: hidden;
+         }
+
+         .wp-block-image img.show {
+            animation: show-content-image 0.4s;
+         }
+      }
+
+      .wp-block-image[style*="border-radius"] img,
+      .wp-block-image[style*="border-radius"]>a {
+         border-radius: inherit;
+      }
+
+      .wp-block-image.has-custom-border img {
+         box-sizing: border-box;
+      }
+
+      .wp-block-image.aligncenter {
+         text-align: center;
+      }
+
+      .wp-block-image.alignfull>a,
+      .wp-block-image.alignwide>a {
+         width: 100%;
+      }
+
+      .wp-block-image.alignfull img,
+      .wp-block-image.alignwide img {
+         height: auto;
+         width: 100%;
+      }
+
+      .wp-block-image .aligncenter,
+      .wp-block-image .alignleft,
+      .wp-block-image .alignright,
+      .wp-block-image.aligncenter,
+      .wp-block-image.alignleft,
+      .wp-block-image.alignright {
+         display: table;
+      }
+
+      .wp-block-image .aligncenter>figcaption,
+      .wp-block-image .alignleft>figcaption,
+      .wp-block-image .alignright>figcaption,
+      .wp-block-image.aligncenter>figcaption,
+      .wp-block-image.alignleft>figcaption,
+      .wp-block-image.alignright>figcaption {
+         caption-side: bottom;
+         display: table-caption;
+      }
+
+      .wp-block-image .alignleft {
+         float: left;
+         margin: 0.5em 1em 0.5em 0;
+      }
+
+      .wp-block-image .alignright {
+         float: right;
+         margin: 0.5em 0 0.5em 1em;
+      }
+
+      .wp-block-image .aligncenter {
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      .wp-block-image :where(figcaption) {
+         margin-bottom: 1em;
+         margin-top: 0.5em;
+      }
+
+      .wp-block-image.is-style-circle-mask img {
+         border-radius: 9999px;
+      }
+
+      @supports ((-webkit-mask-image: none) or (mask-image: none)) or (-webkit-mask-image: none) {
+         .wp-block-image.is-style-circle-mask img {
+            border-radius: 0;
+            -webkit-mask-image: url('data:image/svg+xml;utf8,
+ <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" > <circle cx="50" cy="50" r="50" /> </svg> ');
+ mask-image: url('data:image/svg+xml;utf8,
+ <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" > <circle cx="50" cy="50" r="50" /> </svg> ');
+ mask-mode: alpha;
+                     -webkit-mask-position: center;
+                     mask-position: center;
+                     -webkit-mask-repeat: no-repeat;
+                     mask-repeat: no-repeat;
+                     -webkit-mask-size: contain;
+                     mask-size: contain;
+               }
+            }
+
+            :root :where(.wp-block-image.is-style-rounded img,
+               .wp-block-image .is-style-rounded img) {
+               border-radius: 9999px;
+            }
+
+            .wp-block-image figure {
+               margin: 0;
+            }
+
+            .wp-lightbox-container {
+               display: flex;
+               flex-direction: column;
+               position: relative;
+            }
+
+            .wp-lightbox-container img {
+               cursor: zoom-in;
+            }
+
+            .wp-lightbox-container img:hover + button {
+               opacity: 1;
+            }
+
+            .wp-lightbox-container button {
+               align-items: center;
+               backdrop-filter: blur(16px) saturate(180%);
+               background-color: #5a5a5a40;
+               border: none;
+               border-radius: 4px;
+               cursor: zoom-in;
+               display: flex;
+               height: 20px;
+               justify-content: center;
+               opacity: 0;
+               padding: 0;
+               position: absolute;
+               right: 16px;
+               text-align: center;
+               top: 16px;
+               width: 20px;
+               z-index: 100;
+            }
+
+            @media not (prefers-reduced-motion) {
+               .wp-lightbox-container button {
+                  transition: opacity 0.2s ease;
+               }
+            }
+
+            .wp-lightbox-container button:focus-visible {
+               outline: 3px auto #5a5a5a40;
+               outline: 3px auto -webkit-focus-ring-color;
+               outline-offset: 3px;
+            }
+
+            .wp-lightbox-container button:hover {
+               cursor: pointer;
+               opacity: 1;
+            }
+
+            .wp-lightbox-container button:focus {
+               opacity: 1;
+            }
+
+            .wp-lightbox-container button:focus,
+            .wp-lightbox-container button:hover,
+            .wp-lightbox-container button:not(:hover):not(:active):not(.has-background) {
+               background-color: #5a5a5a40;
+               border: none;
+            }
+
+            .wp-lightbox-overlay {
+               box-sizing: border-box;
+               cursor: zoom-out;
+               height: 100vh;
+               left: 0;
+               overflow: hidden;
+               position: fixed;
+               top: 0;
+               visibility: hidden;
+               width: 100%;
+               z-index: 100000;
+            }
+
+            .wp-lightbox-overlay .close-button {
+               align-items: center;
+               cursor: pointer;
+               display: flex;
+               justify-content: center;
+               min-height: 40px;
+               min-width: 40px;
+               padding: 0;
+               position: absolute;
+               right: calc(env(safe-area-inset-right) + 16px);
+               top: calc(env(safe-area-inset-top) + 16px);
+               z-index: 5000000;
+            }
+
+            .wp-lightbox-overlay .close-button:focus,
+            .wp-lightbox-overlay .close-button:hover,
+            .wp-lightbox-overlay .close-button:not(:hover):not(:active):not(.has-background) {
+               background: none;
+               border: none;
+            }
+
+            .wp-lightbox-overlay .lightbox-image-container {
+               height: var(--wp--lightbox-container-height);
+               left: 50%;
+               overflow: hidden;
+               position: absolute;
+               top: 50%;
+               transform: translate(-50%, -50%);
+               transform-origin: top left;
+               width: var(--wp--lightbox-container-width);
+               z-index: 9999999999;
+            }
+
+            .wp-lightbox-overlay .wp-block-image {
+               align-items: center;
+               box-sizing: border-box;
+               display: flex;
+               height: 100%;
+               justify-content: center;
+               margin: 0;
+               position: relative;
+               transform-origin: 0 0;
+               width: 100%;
+               z-index: 3000000;
+            }
+
+            .wp-lightbox-overlay .wp-block-image img {
+               height: var(--wp--lightbox-image-height);
+               min-height: var(--wp--lightbox-image-height);
+               min-width: var(--wp--lightbox-image-width);
+               width: var(--wp--lightbox-image-width);
+            }
+
+            .wp-lightbox-overlay .wp-block-image figcaption {
+               display: none;
+            }
+
+            .wp-lightbox-overlay button {
+               background: none;
+               border: none;
+            }
+
+            .wp-lightbox-overlay .scrim {
+               background-color: #fff;
+               height: 100%;
+               opacity: 0.9;
+               position: absolute;
+               width: 100%;
+               z-index: 2000000;
+            }
+
+            .wp-lightbox-overlay.active {
+               visibility: visible;
+            }
+
+            @media not (prefers-reduced-motion) {
+               .wp-lightbox-overlay.active {
+                  animation: turn-on-visibility 0.25s both;
+               }
+
+               .wp-lightbox-overlay.active img {
+                  animation: turn-on-visibility 0.35s both;
+               }
+
+               .wp-lightbox-overlay.show-closing-animation:not(.active) {
+                  animation: turn-off-visibility 0.35s both;
+               }
+
+               .wp-lightbox-overlay.show-closing-animation:not(.active) img {
+                  animation: turn-off-visibility 0.25s both;
+               }
+
+               .wp-lightbox-overlay.zoom.active {
+                  animation: none;
+                  opacity: 1;
+                  visibility: visible;
+               }
+
+               .wp-lightbox-overlay.zoom.active .lightbox-image-container {
+                  animation: lightbox-zoom-in 0.4s;
+               }
+
+               .wp-lightbox-overlay.zoom.active .lightbox-image-container img {
+                  animation: none;
+               }
+
+               .wp-lightbox-overlay.zoom.active .scrim {
+                  animation: turn-on-visibility 0.4s forwards;
+               }
+
+               .wp-lightbox-overlay.zoom.show-closing-animation:not(.active) {
+                  animation: none;
+               }
+
+               .wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container {
+                  animation: lightbox-zoom-out 0.4s;
+               }
+
+               .wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img {
+                  animation: none;
+               }
+
+               .wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim {
+                  animation: turn-off-visibility 0.4s forwards;
+               }
+            }
+
+            @keyframes show-content-image {
+               0% {
+                  visibility: hidden;
+               }
+
+               99% {
+                  visibility: hidden;
+               }
+
+               to {
+                  visibility: visible;
+               }
+            }
+
+            @keyframes turn-on-visibility {
+               0% {
+                  opacity: 0;
+               }
+
+               to {
+                  opacity: 1;
+               }
+            }
+
+            @keyframes turn-off-visibility {
+               0% {
+                  opacity: 1;
+                  visibility: visible;
+               }
+
+               99% {
+                  opacity: 0;
+                  visibility: visible;
+               }
+
+               to {
+                  opacity: 0;
+                  visibility: hidden;
+               }
+            }
+
+            @keyframes lightbox-zoom-in {
+               0% {
+                  transform: translate(calc((-100vw + var(--wp--lightbox-scrollbar-width)) / 2 + var(--wp--lightbox-initial-left-position)),
+                     calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));
+               }
+
+               to {
+                  transform: translate(-50%, -50%) scale(1);
+               }
+            }
+
+            @keyframes lightbox-zoom-out {
+               0% {
+                  transform: translate(-50%, -50%) scale(1);
+                  visibility: visible;
+               }
+
+               99% {
+                  visibility: visible;
+               }
+
+               to {
+                  transform: translate(calc((-100vw + var(--wp--lightbox-scrollbar-width)) / 2 + var(--wp--lightbox-initial-left-position)),
+                     calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));
+                  visibility: hidden;
+               }
+            }
+
+            /*# sourceURL=https://globefarer.qodeinteractive.com/wp-includes/blocks/image/style.min.css */
+   </style>
    <style id="wp-block-columns-inline-css" type="text/css">
       .wp-block-columns {
          box-sizing: border-box;
@@ -902,7 +1275,7 @@
                         <span class="qodef-menu-item-text">Solution</span>
                      </a>
                   </li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1b">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1">
                      <a href="cargo-vessel.htm">
                         <span class="qodef-menu-item-text">Schedule</span>
                      </a>
@@ -923,8 +1296,23 @@
 
                   <!-- Home -->
                   
-                  <!-- Schedule -->
                   
+                  <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1">
+                     <a href="https://www.marinetraffic.com/en/ais/home/centerx:-34.8/centery:7.4/zoom:2" target="_blank">
+                        <span class="qodef-menu-item-text">Marine Traffic</span>
+                     </a>
+                  </li>
+                  
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1">
+                     <a href="index2.htm">
+                        <span class="qodef-menu-item-text">Slider Demo</span>
+                     </a>
+                  </li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1">
+                     <a href="currency-conversion.htm">
+                        <span class="qodef-menu-item-text">Currency</span>
+                     </a>
+                  </li> -->
                   <!-- About us -->
                   
                   <!-- Solution -->
@@ -1082,10 +1470,6 @@
                   <a href="solution.htm"><span class="qodef-menu-item-text">Solution</span></a>
                </li>
 <li
-                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-758  qodef-menu-item--narrow">
-                  <a href="cargo-vessel.htm"><span class="qodef-menu-item-text">Schedule</span></a>
-               </li>
-<li
                   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-766  qodef-menu-item--narrow">
                   <a href="contact.htm"><span class="qodef-menu-item-text">Contact</span></a>
                   
@@ -1095,8 +1479,6 @@
 
 
 
-
-               
                
                
                
@@ -1109,7 +1491,7 @@
             class="qodef-page-title qodef-m qodef-title--standard qodef-alignment--left qodef-vertical-alignment--header-bottom qodef-page-title-area-cursor--dark">
             <div class="qodef-m-inner">
                <div class="qodef-m-content qodef-content-grid">
-                  <h1 class="qodef-m-title entry-title">Customs Brokerage</h1>
+                  <h1 class="qodef-m-title entry-title">Container Specification</h1>
                </div>
             </div>
          </div>
@@ -1127,53 +1509,6 @@
                                        <div class="qodef-e qodef-career-content">
                                           <div data-elementor-type="wp-post" data-elementor-id="3071"
                                              class="elementor elementor-3071">
-                                             <!-- img -->
-                                             <section
-                                                class="elementor-section elementor-top-section elementor-element elementor-element-137040d elementor-section-full_width elementor-section-height-default elementor-section-height-default qodef-elementor-content-no">
-                                                <div class="elementor-container elementor-column-gap-no">
-                                                   <div
-                                                      class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-54985ce"
-                                                      data-id="54985ce" data-element_type="column">
-                                                      <div class="elementor-widget-wrap elementor-element-populated">
-                                                         <div
-                                                            class="elementor-element elementor-element-3c9ccaf elementor-widget elementor-widget-globefarer_core_section_title"
-                                                            data-id="3c9ccaf" data-element_type="widget"
-                                                            data-widget_type="globefarer_core_section_title.default">
-                                                            <div class="elementor-widget-container">
-                                                               <div
-                                                                  class="qodef-shortcode qodef-m  qodef-section-title qodef-alignment--left   qodef-appear-animation--no">
-                                                                  <h2 class="qodef-m-title">
-                                                                     
-                                                                  </h2>
-                                                                  
-                                                                  <div class="elementor-widget-wrap elementor-element-populated">
-                                                                     <div
-                                                                        class="elementor-element elementor-element-22f377d elementor-widget elementor-widget-globefarer_core_single_image"
-                                                                        data-id="22f377d" data-element_type="widget"
-                                                                        data-widget_type="globefarer_core_single_image.default" style="margin-top: 30px">
-                                                                        <div class="elementor-widget-container">
-                                                                           <div
-                                                                              class="qodef-shortcode qodef-m  qodef-single-image qodef-layout--default qodef-appear-animation--no  ">
-                                                                              <div class="qodef-m-image">
-                                                                                 <img fetchpriority="high" decoding="async" width="1040" height="552"
-                                                                                    src="./wp-content/uploads/2021/08/hero-page-6.jpg"
-                                                                                    class="attachment-full size-full" alt="s"
-                                                                                    srcset="./wp-content/uploads/2021/08/hero-page-6.jpg 1040w, ./wp-content/uploads/2021/08/services-img-1-300x159.jpg 300w, ./wp-content/uploads/2021/08/services-img-1-1024x544.jpg 1024w, ./wp-content/uploads/2021/08/services-img-1-768x408.jpg 768w"
-                                                                                    sizes="(max-width: 1040px) 100vw, 1040px">
-                                                                              </div>
-                                                                           </div>
-                                                                        </div>
-                                                                     </div>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </section>
-                                             <!-- end of image -->
-                                             <!-- Road Freight Section -->
                                              <section
                                                 class="elementor-section elementor-top-section elementor-element elementor-element-2979c31-kk elementor-section-full_width elementor-section-height-default elementor-section-height-default qodef-elementor-content-no">
                                                 <div class="elementor-container elementor-column-gap-no">
@@ -1188,19 +1523,232 @@
                                                             <div class="elementor-widget-container">
                                                                <div
                                                                   class="qodef-shortcode qodef-m qodef-section-title qodef-alignment--left qodef-appear-animation--no">
-                                                                  
-                                                                  <h3 class="qodef-m-subtitle">Customs Brokerage Solutions Simplified</h3>
-                                                                  <p class="qodef-m-text" style="margin-top: 20px">
-                                                                     Navigating international trade regulations can be a complex and time-consuming process, but with BVC's  customs brokerage solutions, you can ensure that your cargo clears customs seamlessly. Our team of experienced professionals ensures compliance with all regulatory requirements, enabling faster clearance and avoiding costly delays.
-                                                                  </p>
-                                                               </div>
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
+                                                                  <div class="spec-page">
+                                                <h3 class="spec-title">Container Specification</h3>
+                                                <p class="spec-intro">
+                                                   Standard dimensions and payloads for common 20-foot and 40-foot container types.
+                                                   Values are typical and may vary by carrier and equipment provider.
+                                                </p>
+
+                                                <div class="spec-table-wrap">
+                                                   <table class="spec-table" data-spec-table>
+                                                      <caption class="spec-caption">20-Footer</caption>
+                                                      <thead>
+                                                         <tr class="spec-head-1">
+                                                            <th rowspan="3" data-col="1">Type</th>
+                                                            <th colspan="8">Dimensions</th>
+                                                            <th rowspan="3" data-col="10">
+                                                               Internal Capacity
+                                                               <span class="spec-unit">(CU.M)</span>
+                                                            </th>
+                                                            <th rowspan="3" data-col="11">
+                                                               Maximum Gross Mass
+                                                               <span class="spec-unit">(KG)</span>
+                                                            </th>
+                                                            <th rowspan="3" data-col="12">
+                                                               Average Tare
+                                                               <span class="spec-unit">(KG)</span>
+                                                            </th>
+                                                            <th rowspan="3" data-col="13">
+                                                               Maximum Pay load
+                                                               <span class="spec-unit">(KG)</span>
+                                                            </th>
+                                                         </tr>
+                                                         <tr class="spec-head-2">
+                                                            <th colspan="3">External</th>
+                                                            <th colspan="3">Internal</th>
+                                                            <th colspan="2">Door</th>
+                                                         </tr>
+                                                         <tr class="spec-head-3">
+                                                            <th data-col="2">Length <span class="spec-unit">mm</span></th>
+                                                            <th data-col="3">Width <span class="spec-unit">mm</span></th>
+                                                            <th data-col="4">Height <span class="spec-unit">mm</span></th>
+                                                            <th data-col="5">Length <span class="spec-unit">mm</span></th>
+                                                            <th data-col="6">Width <span class="spec-unit">mm</span></th>
+                                                            <th data-col="7">Height <span class="spec-unit">mm</span></th>
+                                                            <th data-col="8">Width <span class="spec-unit">mm</span></th>
+                                                            <th data-col="9">Height <span class="spec-unit">mm</span></th>
+                                                         </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                         <tr>
+                                                            <th data-col="1">Standard</th>
+                                                            <td data-col="2">6,058</td>
+                                                            <td data-col="3">2,438</td>
+                                                            <td data-col="4">2,591</td>
+                                                            <td data-col="5">5,898</td>
+                                                            <td data-col="6">2,352</td>
+                                                            <td data-col="7">2,393</td>
+                                                            <td data-col="8">2,340</td>
+                                                            <td data-col="9">2,280</td>
+                                                            <td data-col="10">33.2</td>
+                                                            <td data-col="11">30,480</td>
+                                                            <td data-col="12">2,185</td>
+                                                            <td data-col="13">28,295</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <th data-col="1">Flat Rack</th>
+                                                            <td data-col="2">6,058</td>
+                                                            <td data-col="3">2,438</td>
+                                                            <td data-col="4">2,591</td>
+                                                            <td data-col="5">5,638</td>
+                                                            <td data-col="6">2,226</td>
+                                                            <td data-col="7">2,213</td>
+                                                            <td data-col="8">n/a</td>
+                                                            <td data-col="9">n/a</td>
+                                                            <td data-col="10">n/a</td>
+                                                            <td data-col="11">34,000</td>
+                                                            <td data-col="12">2,750</td>
+                                                            <td data-col="13">31,250</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <th data-col="1">Open Top</th>
+                                                            <td data-col="2">6,058</td>
+                                                            <td data-col="3">2,438</td>
+                                                            <td data-col="4">2,591</td>
+                                                            <td data-col="5">5,899</td>
+                                                            <td data-col="6">2,352</td>
+                                                            <td data-col="7">2,351</td>
+                                                            <td data-col="8">2,340</td>
+                                                            <td data-col="9">2,280</td>
+                                                            <td data-col="10">32.2</td>
+                                                            <td data-col="11">30,480</td>
+                                                            <td data-col="12">2,260</td>
+                                                            <td data-col="13">28,220</td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
                                                 </div>
-                                             </section>
-                                             <!-- end  -->
+
+                                                <div class="spec-table-wrap">
+                                                   <table class="spec-table" data-spec-table>
+                                                      <caption class="spec-caption">40-Footer</caption>
+                                                      <thead>
+                                                         <tr class="spec-head-1">
+                                                            <th rowspan="3" data-col="1">Type</th>
+                                                            <th colspan="8">Dimensions</th>
+                                                            <th rowspan="3" data-col="10">
+                                                               Internal Capacity
+                                                               <span class="spec-unit">(CU.M)</span>
+                                                            </th>
+                                                            <th rowspan="3" data-col="11">
+                                                               Maximum Gross Mass
+                                                               <span class="spec-unit">(KG)</span>
+                                                            </th>
+                                                            <th rowspan="3" data-col="12">
+                                                               Average Tare
+                                                               <span class="spec-unit">(KG)</span>
+                                                            </th>
+                                                            <th rowspan="3" data-col="13">
+                                                               Maximum Pay load
+                                                               <span class="spec-unit">(KG)</span>
+                                                            </th>
+                                                         </tr>
+                                                         <tr class="spec-head-2">
+                                                            <th colspan="3">External</th>
+                                                            <th colspan="3">Internal</th>
+                                                            <th colspan="2">Door</th>
+                                                         </tr>
+                                                         <tr class="spec-head-3">
+                                                            <th data-col="2">Length <span class="spec-unit">mm</span></th>
+                                                            <th data-col="3">Width <span class="spec-unit">mm</span></th>
+                                                            <th data-col="4">Height <span class="spec-unit">mm</span></th>
+                                                            <th data-col="5">Length <span class="spec-unit">mm</span></th>
+                                                            <th data-col="6">Width <span class="spec-unit">mm</span></th>
+                                                            <th data-col="7">Height <span class="spec-unit">mm</span></th>
+                                                            <th data-col="8">Width <span class="spec-unit">mm</span></th>
+                                                            <th data-col="9">Height <span class="spec-unit">mm</span></th>
+                                                         </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                         <tr>
+                                                            <th data-col="1">Standard</th>
+                                                            <td data-col="2">12,192</td>
+                                                            <td data-col="3">2,438</td>
+                                                            <td data-col="4">2,591</td>
+                                                            <td data-col="5">12,032</td>
+                                                            <td data-col="6">2,352</td>
+                                                            <td data-col="7">2,393</td>
+                                                            <td data-col="8">2,340</td>
+                                                            <td data-col="9">2,280</td>
+                                                            <td data-col="10">67.8</td>
+                                                            <td data-col="11">30,480</td>
+                                                            <td data-col="12">3,740</td>
+                                                            <td data-col="13">26,740</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <th data-col="1">High Cube</th>
+                                                            <td data-col="2">12,192</td>
+                                                            <td data-col="3">2,438</td>
+                                                            <td data-col="4">2,896</td>
+                                                            <td data-col="5">12,032</td>
+                                                            <td data-col="6">2,352</td>
+                                                            <td data-col="7">2,698</td>
+                                                            <td data-col="8">2,340</td>
+                                                            <td data-col="9">2,585</td>
+                                                            <td data-col="10">76.4</td>
+                                                            <td data-col="11">30,480</td>
+                                                            <td data-col="12">3,890</td>
+                                                            <td data-col="13">26,590</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <th data-col="1">Refrigerated High Cube</th>
+                                                            <td data-col="2">12,192</td>
+                                                            <td data-col="3">2,438</td>
+                                                            <td data-col="4">2,896</td>
+                                                            <td data-col="5">11,583</td>
+                                                            <td data-col="6">2,290</td>
+                                                            <td data-col="7">2,553</td>
+                                                            <td data-col="8">2,294</td>
+                                                            <td data-col="9">2,574</td>
+                                                            <td data-col="10">67.7</td>
+                                                            <td data-col="11">34,000</td>
+                                                            <td data-col="12">4,720</td>
+                                                            <td data-col="13">29,280</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <th data-col="1">Flat Rack</th>
+                                                            <td data-col="2">12,192</td>
+                                                            <td data-col="3">2,438</td>
+                                                            <td data-col="4">2,591</td>
+                                                            <td data-col="5">11,762</td>
+                                                            <td data-col="6">2,378</td>
+                                                            <td data-col="7">1,960</td>
+                                                            <td data-col="8">n/a</td>
+                                                            <td data-col="9">n/a</td>
+                                                            <td data-col="10">n/a</td>
+                                                            <td data-col="11">45,000</td>
+                                                            <td data-col="12">4,795</td>
+                                                            <td data-col="13">40,205</td>
+                                                         </tr>
+                                                         <tr>
+                                                            <th data-col="1">Open Top</th>
+                                                            <td data-col="2">12,192</td>
+                                                            <td data-col="3">2,438</td>
+                                                            <td data-col="4">2,591</td>
+                                                            <td data-col="5">12,024</td>
+                                                            <td data-col="6">2,350</td>
+                                                            <td data-col="7">2,351</td>
+                                                            <td data-col="8">2,338</td>
+                                                            <td data-col="9">2,279</td>
+                                                            <td data-col="10">67</td>
+                                                            <td data-col="11">30,480</td>
+                                                            <td data-col="12">3,980</td>
+                                                            <td data-col="13">26,500</td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </div>
+
+                                                <p class="spec-note">* Above are typical figures only.</p>
+                                             </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                  </section>
                                           </div>
                                        </div>
                                     </div>
@@ -1210,6 +1758,7 @@
                         </article>
                      </div>
                   </div>
+                  
                   <div class="qodef-grid-item qodef-page-sidebar-section qodef-col--3 qodef-col-pull--9">
                      <aside id="qodef-page-sidebar" role="complementary">
                         <div class="widget widget_nav_menu" data-area="services-sidebar">
@@ -1220,7 +1769,7 @@
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2822">
                                     <ul id="menu-services-sidebar-menu" class="menu">
                                        <li id="menu-item-2825"
-                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2825"><a
+                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2825 menu-item-active1"><a
                                              href="./freight-management-truck.htm">Road Freight/Truck</a>
                                        </li>
                                        <li id="menu-item-2822"
@@ -1263,7 +1812,7 @@
                                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2822">
                                     <ul id="menu-services-sidebar-menu" class="menu">
                                        <li id="menu-item-2823"
-                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2823 menu-item-active"><a
+                                          class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2823"><a
                                              href="./customs-brokerage.htm">Customs Brokerage</a>
                                        </li>
                                     </ul>
@@ -2345,7 +2894,195 @@
       /* ]]> */
    </script>
    
+   <!-- my custom style -->
+   <style>
+      .spec-page {
+         padding: 10px 0 30px;
+      }
 
+      .spec-title {
+         font-size: 32px;
+         line-height: 1.2;
+         margin: 0 0 12px;
+         color: #151515;
+      }
+
+      .spec-intro {
+         max-width: 760px;
+         color: #5f5a52;
+         margin-bottom: 20px;
+      }
+
+      .spec-table-wrap {
+         margin-top: 26px;
+         border: 1px solid #e3ddcf;
+         border-radius: 10px;
+         background: #ffffff;
+         box-shadow: 0 10px 24px rgba(20, 20, 20, 0.08);
+         overflow-x: auto;
+      }
+
+      .spec-table {
+         width: 100%;
+         min-width: 980px;
+         border-collapse: separate;
+         border-spacing: 0;
+      }
+
+      .spec-caption {
+         text-align: left;
+         padding: 14px 18px;
+         font-weight: 600;
+         letter-spacing: 0.4px;
+         color: #ffffff;
+         background: linear-gradient(135deg, #7a1f1f, #b3362d);
+      }
+
+      .spec-table th,
+      .spec-table td {
+         padding: 10px 12px;
+         border-right: 1px solid #ece6da;
+         border-bottom: 1px solid #ece6da;
+         text-align: center;
+         background: #ffffff;
+         transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      }
+
+      .spec-table th[data-col="1"] {
+         text-align: left;
+      }
+
+      .spec-table thead th {
+         background: #f5f1e7;
+         color: #3f3427;
+         font-weight: 600;
+      }
+
+      .spec-table .spec-head-1 th {
+         background: #efe7d6;
+      }
+
+      .spec-table .spec-head-2 th {
+         background: #f7f2e7;
+         font-size: 13px;
+      }
+
+      .spec-table .spec-head-3 th {
+         background: #fbf8f1;
+         font-size: 12px;
+      }
+
+      .spec-unit {
+         display: block;
+         font-size: 11px;
+         font-weight: 500;
+         color: #7c7369;
+         margin-top: 2px;
+      }
+
+      .spec-table tr.is-row-hover > td,
+      .spec-table tr.is-row-hover > th,
+      .spec-table .is-col-hover {
+         background: #fff3d4;
+      }
+
+      .spec-table .is-cell-hover {
+         background: #ffe5ad;
+         box-shadow: inset 0 0 0 2px #d4a24f;
+      }
+
+      .spec-note {
+         margin-top: 16px;
+         color: #7a7266;
+         font-size: 13px;
+      }
+
+      @media (max-width: 1024px) {
+         .spec-title {
+            font-size: 26px;
+         }
+
+         .spec-table {
+            min-width: 860px;
+         }
+      }
+   </style>
+
+   <script>
+      (function () {
+         function setupSpecTable(table) {
+            var activeCol = null;
+            var activeRow = null;
+            var activeCell = null;
+
+            function clearHover() {
+               if (activeCol) {
+                  table.querySelectorAll('[data-col="' + activeCol + '"]').forEach(function (cell) {
+                     cell.classList.remove('is-col-hover');
+                  });
+                  activeCol = null;
+               }
+               if (activeRow) {
+                  activeRow.classList.remove('is-row-hover');
+                  activeRow = null;
+               }
+               if (activeCell) {
+                  activeCell.classList.remove('is-cell-hover');
+                  activeCell = null;
+               }
+            }
+
+            table.addEventListener('mouseover', function (event) {
+               var cell = event.target.closest('td,th');
+               if (!cell || !table.contains(cell)) {
+                  return;
+               }
+
+               var col = cell.getAttribute('data-col');
+               if (!col) {
+                  return;
+               }
+
+               if (activeCol !== col) {
+                  if (activeCol) {
+                     table.querySelectorAll('[data-col="' + activeCol + '"]').forEach(function (item) {
+                        item.classList.remove('is-col-hover');
+                     });
+                  }
+                  table.querySelectorAll('[data-col="' + col + '"]').forEach(function (item) {
+                     item.classList.add('is-col-hover');
+                  });
+                  activeCol = col;
+               }
+
+               var row = cell.parentElement;
+               if (row && row.tagName === 'TR') {
+                  if (activeRow && activeRow !== row) {
+                     activeRow.classList.remove('is-row-hover');
+                  }
+                  activeRow = row;
+                  activeRow.classList.add('is-row-hover');
+               }
+
+               if (activeCell && activeCell !== cell) {
+                  activeCell.classList.remove('is-cell-hover');
+               }
+               activeCell = cell;
+               activeCell.classList.add('is-cell-hover');
+            });
+
+            table.addEventListener('mouseout', function (event) {
+               if (!table.contains(event.relatedTarget)) {
+                  clearHover();
+               }
+            });
+         }
+
+         document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.spec-table').forEach(setupSpecTable);
+         });
+      })();
+   </script>
 
 </body>
 
