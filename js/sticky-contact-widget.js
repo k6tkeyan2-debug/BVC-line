@@ -14,6 +14,13 @@
     }
 
     function onScroll() {
+      if (window.innerWidth <= 991) {
+        widget.classList.remove('sticky');
+        widget.style.width = '';
+        widget.style.top = '';
+        return;
+      }
+
       var scrollY = window.pageYOffset || document.documentElement.scrollTop;
       var stickyOffset = getStickyOffset();
       var widgetHeight = widget.offsetHeight;
