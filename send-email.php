@@ -1,8 +1,35 @@
 <?php
 // Email Configuration
-$recipient_email = 'k6tkeyan12@gmail.com';
-$from_email = 'k6tkeyan2@gmail.com';
+$recipient_email = 'sales-sg@bvcline.com.sg';
+$from_email = $email; // Use the email from the form submission
 $site_name = 'BVC Lines';
+
+// Logging function
+function log_email_activity($message, $data = null) {
+    $log_file = __DIR__ . '/email_log.txt';
+    $timestamp = date('Y-m-d H:i:s');
+    $log_entry = "[$timestamp] $message";
+
+    if ($data !== null) {
+        $log_entry .= " | Data: " . json_encode($data, JSON_PRETTY_PRINT);
+    }
+
+    $log_entry .= "\n" . str_repeat('-', 80) . "\n";
+
+    // Try to write to log file, create if doesn't exist
+    $fp = fopen($log_file, 'a');
+    if ($fp) {
+        fwrite($fp, $log_entry);
+        fclose($fp);
+    }
+}
+
+// Log script start
+log_email_activity("Email script started", array(
+    'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown',
+    'remote_ip' => $_SERVER['REMOTE_ADDR'] ?? 'Unknown',
+    'request_method' => $_SERVER['REQUEST_METHOD'] ?? 'Unknown'
+));
 
 // Get form data
 $name = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
@@ -36,6 +63,17 @@ if (empty($message)) {
 
 // If there are validation errors
 if (!empty($errors)) {
+    log_email_activity("Form validation failed", array(
+        'errors' => $errors,
+        'form_data' => array(
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'country' => $country,
+            'message_length' => strlen($message)
+        )
+    ));
+
     http_response_code(400);
     echo json_encode(array(
         'status' => 'error',
@@ -105,8 +143,47 @@ $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
 $headers .= "From: " . $from_email . "\r\n";
 $headers .= "Reply-To: " . htmlspecialchars($email) . "\r\n";
 
+// Log email attempt
+log_email_activity("Attempting to send email", array(
+    'to' => $recipient_email,
+    'from' => $from_email,
+    'subject' => $subject,
+    'headers' => $headers,
+    'form_data' => array(
+        'name' => $name,
+        'email' => $email,
+        'phone' => $phone,
+        'country' => $country,
+        'message_length' => strlen($message)
+    )
+));
+
 // Send email
-$mail_sent = mail($recipient_email, $subject, $email_body, $headers);
+try {
+    $mail_sent = mail($recipient_email, $subject, $email_body, $headers);
+
+    // Log result
+    if ($mail_sent) {
+        log_email_activity("Email sent successfully to recipient", array(
+            'recipient' => $recipient_email,
+            'subject' => $subject
+        ));
+    } else {
+        log_email_activity("Email sending failed to recipient", array(
+            'recipient' => $recipient_email,
+            'subject' => $subject,
+            'error' => 'mail() function returned false'
+        ));
+    }
+} catch (Exception $e) {
+    log_email_activity("Exception occurred while sending email to recipient", array(
+        'recipient' => $recipient_email,
+        'subject' => $subject,
+        'error' => $e->getMessage(),
+        'error_code' => $e->getCode()
+    ));
+    $mail_sent = false;
+}
 
 if ($mail_sent) {
     // Also send confirmation email to the user
@@ -132,15 +209,50 @@ if ($mail_sent) {
     </body>
     </html>
     ";
-    
-    mail($email, $user_subject, $user_body, $headers);
-    
+
+    // Log confirmation email attempt
+    log_email_activity("Attempting to send confirmation email to user", array(
+        'to' => $email,
+        'subject' => $user_subject
+    ));
+
+    try {
+        $confirmation_sent = mail($email, $user_subject, $user_body, $headers);
+
+        if ($confirmation_sent) {
+            log_email_activity("Confirmation email sent successfully to user", array(
+                'user_email' => $email,
+                'subject' => $user_subject
+            ));
+        } else {
+            log_email_activity("Confirmation email failed to user", array(
+                'user_email' => $email,
+                'subject' => $user_subject,
+                'error' => 'mail() function returned false for confirmation'
+            ));
+        }
+    } catch (Exception $e) {
+        log_email_activity("Exception occurred while sending confirmation email", array(
+            'user_email' => $email,
+            'subject' => $user_subject,
+            'error' => $e->getMessage(),
+            'error_code' => $e->getCode()
+        ));
+        $confirmation_sent = false;
+    }
+
     http_response_code(200);
     echo json_encode(array(
         'status' => 'success',
         'message' => 'Thank you! Your message has been sent successfully. We will contact you shortly.'
     ));
 } else {
+    log_email_activity("Email sending completely failed", array(
+        'recipient' => $recipient_email,
+        'user_email' => $email,
+        'error' => 'Both recipient and confirmation emails failed'
+    ));
+
     http_response_code(500);
     echo json_encode(array(
         'status' => 'error',

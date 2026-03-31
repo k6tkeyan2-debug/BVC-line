@@ -1509,20 +1509,14 @@
                                                             >
                                                             <div class="elementor-widget-container">
                                                                <div class="qodef-contact-form-7">
-                                                                  <div class="wpcf7 no-js" id="wpcf7-f2429-p3235-o2"
-                                                                     lang="en-us" dir="ltr">
-                                                                     <div class="screen-reader-response">
-                                                                        <p role="status" aria-live="polite"
-                                                                           aria-atomic="true"></p>
-                                                                     </div>
-                                                                     
+                                                                  <div class="qodef-custom-contact-form" lang="en-us" dir="ltr">
                                                                      <form id="contactForm" action="send-email.php"
-                                                                        method="post" class="wpcf7-form init demo"
+                                                                        method="post" class="custom-contact-form"
                                                                         aria-label="Contact form"
-                                                                        novalidate="novalidate" data-status="init">
+                                                                        novalidate="novalidate">
 
                                                                         <div class="qodef-m-input">
-                                                                           <p>Please fill in the below fields to contact us. Fields marked with * are mandatory.</p>
+                                                                           <p style="margin:1em !important">Please fill in the below fields to contact us. Fields marked with * are mandatory.</p>
                                                                            <div class="qodef-m-input-holder">
                                                                               <label><span
                                                                                     class="qodef-m-input-label">Your
@@ -2201,17 +2195,7 @@
    </script>
    <script type="text/javascript" src="wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.7.6"
       id="swv-js"></script>
-   <script type="text/javascript" id="contact-form-7-js-extra">
-      /* <![CDATA[ */
-      var wpcf7 = {
-         api: {
-            root: "https://globefarer.qodeinteractive.com/wp-json/",
-            namespace: "contact-form-7/v1",
-         },
-      };
-      //# sourceURL=contact-form-7-js-extra
-      /* ]]> */
-   </script>
+   <
    <script type="text/javascript" src="wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.7.6"
       id="contact-form-7-js"></script>
    <script type="text/javascript" id="cf7msm-js-extra">
@@ -2652,8 +2636,7 @@
             "landing-pages": true,
          },
          urls: {
-            assets:
-               "https:\/\/globefarer.qodeinteractive.com\/wp-content\/plugins\/elementor\/assets\/",
+            assets: ''
          },
          swiperClass: "swiper-container",
          settings: { page: [], editorPreferences: [] },
@@ -2697,42 +2680,7 @@
    <script type="text/javascript"
       src="wp-content/plugins/qi-addons-for-elementor/inc/plugins/elementor/assets/js/elementor.js?ver=6.9"
       id="qi-addons-for-elementor-elementor-js"></script>
-   <script type="text/javascript" id="globefarer-core-elementor-js-extra">
-      /* <![CDATA[ */
-      var qodefElementorGlobal = {
-         vars: {
-            elementorSectionHandler: {
-               "7b053dc": [
-                  {
-                     parallax_type: "parallax",
-                     parallax_image: {
-                        url: "./wp-content/uploads/2021/10/main-home-parallax-1-new.jpg",
-                        id: 7436,
-                        size: "",
-                        alt: "",
-                        source: "library",
-                     },
-                  },
-               ],
-               ee4caa5: [
-                  {
-                     parallax_type: "parallax",
-                     parallax_image: {
-                        url: "./wp-content/uploads/2021/10/main-home-image-3-new.jpg",
-                        id: 7489,
-                        size: "",
-                        alt: "m",
-                        source: "library",
-                     },
-                  },
-               ],
-            },
-            elementorColumnHandler: [],
-         },
-      };
-      //# sourceURL=globefarer-core-elementor-js-extra
-      /* ]]> */
-   </script>
+   
    <script type="text/javascript"
       src="wp-content/plugins/globefarer-core/inc/plugins/elementor/assets/js/elementor.min.js?ver=6.9"
       id="globefarer-core-elementor-js"></script>
@@ -2824,6 +2772,7 @@
             .qodef-contact-form-7 .qodef-m-input > p
             {
                padding: 0 20px;
+               margin-bottom: 30px;
             }
             .elementor-3235 .elementor-element.elementor-element-d3db1c5{ 
                margin-top: 20px;
@@ -2846,10 +2795,151 @@
     font-size: 15px;
     line-height: 1.4em;
     font-weight: 500;
-    margin: 25px 0;
+    margin: 25px 0 30px;
     -ms-word-wrap: break-word;
     word-wrap: break-word;
 }
+
+            @media only screen and (max-width: 768px) {
+               .elementor-3235 .elementor-container {
+                  display: block !important;
+                  width: 100% !important;
+               }
+
+               .elementor-3235 .elementor-column.elementor-col-50 {
+                  width: 100% !important;
+               }
+
+               .elementor-3235 .elementor-element.elementor-element-ca1997c > .elementor-element-populated,
+               .elementor-3235 .elementor-element.elementor-element-425ca96 > .elementor-element-populated {
+                  padding: 0 !important;
+                  margin: 0 !important;
+               }
+
+               .elementor-3235 .elementor-element.elementor-element-69db32f,
+               .elementor-3235 .elementor-element.elementor-element-8dcb04c,
+               .elementor-3235 .elementor-element.elementor-element-69db32f > .elementor-widget-container,
+               .elementor-3235 .elementor-element.elementor-element-8dcb04c > .elementor-widget-container,
+               .elementor-3235 .qodef-contact-form-7,
+               .elementor-3235 .qodef-contact-info,
+               .elementor-3235 .custom-contact-form {
+                  width: 100% !important;
+                  max-width: 100% !important;
+               }
+
+               .elementor-3235 .elementor-element.elementor-element-69db32f {
+                  padding: 24px 18px !important;
+               }
+
+               .elementor-3235 .qodef-contact-info.qodef-layout--type-2 {
+                  padding: 24px 18px !important;
+                  background-attachment: scroll !important;
+                  border-radius: 8px !important;
+               }
+
+               .elementor-3235 .qodef-contact-form-7 .qodef-m-input > p {
+                  padding: 0 !important;
+                  margin: 0 0 18px !important;
+                  font-size: 14px !important;
+                  line-height: 1.5 !important;
+               }
+
+               .elementor-3235 .qodef-m-input-holder,
+               .elementor-3235 .qodef-m-input-holder label,
+               .elementor-3235 .wpcf7-form-control-wrap,
+               .elementor-3235 .wpcf7-form-control,
+               .elementor-3235 input[type="text"],
+               .elementor-3235 input[type="email"],
+               .elementor-3235 input[type="tel"],
+               .elementor-3235 select,
+               .elementor-3235 textarea,
+               .elementor-3235 .qodef-m-address-email,
+               .elementor-3235 .qodef-m-phone,
+               .elementor-3235 .qodef-m-email,
+               .elementor-3235 .qodef-m-address {
+                  width: 100% !important;
+                  max-width: 100% !important;
+                  display: block !important;
+                  box-sizing: border-box !important;
+               }
+
+               .elementor-3235 .qodef-m-input-holder {
+                  margin-bottom: 14px !important;
+               }
+
+               .elementor-3235 .qodef-m-input-label {
+                  display: block !important;
+                  margin-bottom: 8px !important;
+                  padding-left: 0 !important;
+                  font-size: 14px !important;
+                  line-height: 1.4 !important;
+               }
+
+               .elementor-3235 input[type="text"],
+               .elementor-3235 input[type="email"],
+               .elementor-3235 input[type="tel"],
+               .elementor-3235 select,
+               .elementor-3235 textarea {
+                  min-height: 52px !important;
+                  padding: 14px 16px !important;
+                  font-size: 16px !important;
+               }
+
+               .elementor-3235 textarea {
+                  min-height: 140px !important;
+               }
+
+               .elementor-3235 .qodef-m-input-holder select {
+                  padding-left: 16px !important;
+               }
+
+               .elementor-3235 .qodef-m-input-buttons,
+               .elementor-3235 .qodef-m-input-buttons .qodef-button,
+               .elementor-3235 .qodef-m-input-buttons .wpcf7-submit {
+                  width: 100% !important;
+               }
+
+               .elementor-3235 .qodef-m-input-buttons .qodef-button {
+                  justify-content: center !important;
+                  min-height: 52px !important;
+               }
+
+               .elementor-3235 .qodef-contact-info {
+                  margin-top: 20px;
+               }
+
+               .elementor-3235 .qodef-m-phone-tagline,
+               .elementor-3235 .qodef-m-address-tagline,
+               .elementor-3235 .qodef-m-email-tagline {
+                  font-size: 13px !important;
+                  line-height: 1.4 !important;
+                  margin-bottom: 8px !important;
+               }
+
+               .elementor-3235 .qodef-m-phone-item {
+                  font-size: 24px !important;
+                  line-height: 1.25 !important;
+                  margin: 0 0 18px !important;
+               }
+
+               .elementor-3235 .qodef-m-address-item,
+               .elementor-3235 .qodef-m-email-item {
+                  font-size: 16px !important;
+                  line-height: 1.5 !important;
+                  margin: 0 0 16px !important;
+               }
+
+               .elementor-3235 .qodef-m-phone-item a,
+               .elementor-3235 .qodef-m-email-item a {
+                  display: block;
+                  width: 100%;
+                  word-break: break-word;
+               }
+
+               .elementor-3235 .qodef-m-address-item a {
+                  word-break: break-word;
+               }
+            }
             /*# sourceuRL=globefarer-style-inline-css */
         </style>
         
@@ -2858,19 +2948,54 @@
             const contactForm = document.getElementById('contactForm');
             const formResponse = document.getElementById('formResponse');
             const submitBtn = contactForm.querySelector('button[type="submit"]');
-            
+
+            // Create popup container
+            const popup = document.createElement('div');
+            popup.id = 'contactPopup';
+            popup.style.position = 'fixed';
+            popup.style.left = '50%';
+            popup.style.top = '20%';
+            popup.style.transform = 'translateX(-50%)';
+            popup.style.zIndex = '99999';
+            popup.style.maxWidth = '85%';
+            popup.style.minWidth = '320px';
+            popup.style.padding = '18px 20px';
+            popup.style.borderRadius = '8px';
+            popup.style.boxShadow = '0 8px 24px rgba(0,0,0,0.23)';
+            popup.style.fontSize = '15px';
+            popup.style.fontWeight = '600';
+            popup.style.color = '#fff';
+            popup.style.display = 'none';
+            popup.style.textAlign = 'center';
+            popup.style.wordWrap = 'break-word';
+            popup.style.backdropFilter = 'blur(2px)';
+            document.body.appendChild(popup);
+
+            function showPopup(message, type) {
+                popup.textContent = message;
+                if (type === 'success') {
+                    popup.style.backgroundColor = '#218838';
+                } else {
+                    popup.style.backgroundColor = '#c82333';
+                }
+                popup.style.display = 'block';
+                setTimeout(function () {
+                    popup.style.display = 'none';
+                }, 5000);
+            }
+
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    
+
                     // Disable submit button
                     submitBtn.disabled = true;
                     const originalText = submitBtn.querySelector('.qodef-m-button-text').textContent;
                     submitBtn.querySelector('.qodef-m-button-text').textContent = 'Sending...';
-                    
+
                     // Get form data
                     const formData = new FormData(contactForm);
-                    
+
                     // Send form via AJAX
                     fetch('send-email.php', {
                         method: 'POST',
@@ -2878,39 +3003,16 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-                        formResponse.style.display = 'block';
-                        
                         if (data.status === 'success') {
-                            formResponse.style.backgroundColor = '#d4edda';
-                            formResponse.style.color = '#155724';
-                            formResponse.style.borderLeft = '4px solid #28a745';
-                            formResponse.textContent = data.message;
-                            
-                            // Reset form
+                            showPopup(data.message || 'Kya yaar! Aapka message successfully send ho gaya.', 'success');
                             contactForm.reset();
-                            
-                            // Hide message after 5 seconds
-                            setTimeout(() => {
-                                formResponse.style.display = 'none';
-                            }, 5000);
                         } else {
-                            formResponse.style.backgroundColor = '#f8d7da';
-                            formResponse.style.color = '#721c24';
-                            formResponse.style.borderLeft = '4px solid #dc3545';
-                            
-                            if (data.errors && Array.isArray(data.errors)) {
-                                formResponse.textContent = data.errors.join(', ');
-                            } else {
-                                formResponse.textContent = data.message;
-                            }
+                            const errorMessage = (data.errors && Array.isArray(data.errors)) ? data.errors.join(', ') : (data.message || 'Garb connection. Please try again.');
+                            showPopup(errorMessage, 'error');
                         }
                     })
                     .catch(error => {
-                        formResponse.style.display = 'block';
-                        formResponse.style.backgroundColor = '#f8d7da';
-                        formResponse.style.color = '#721c24';
-                        formResponse.style.borderLeft = '4px solid #dc3545';
-                        formResponse.textContent = 'An error occurred. Please try again.';
+                        showPopup('An error occurred. Please try again.', 'error');
                         console.error('Error:', error);
                     })
                     .finally(() => {
@@ -2925,8 +3027,5 @@
 </body>
 
 </html>
-
-
-
 
 
