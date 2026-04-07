@@ -65,6 +65,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* Custom inline style of New UI design */
 
+      /* Header glass-morphism effect - Desktop only */
+      @media screen and (min-width: 1200px) {
+         .home #qodef-page-header-inner {
+            background: rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(11px) !important;
+         }
+      }
+
       #qodef-page-footer-top-area-inner {
          position: relative;
       }
